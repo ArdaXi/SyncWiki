@@ -30,6 +30,11 @@ textarea {
 	width: 100%;
 }
 
+hr {
+	margin: 10px 0;
+	color: #AECEEF;
+}
+
 .spacer {
 	width: 600px;
 	margin: auto;
@@ -53,7 +58,7 @@ textarea {
 	font-weight: bold;
 }
 
-#content {
+.content {
 	display: block;
 	padding: 15px;
 	border: 1px solid #AECEEF;
@@ -121,34 +126,62 @@ ul#tabs img {
 
 /* Content CSS */
 
-#content h1 {
+.content h1 {
 	font-size: 14pt;
 	margin: 5px 0;
 }
 
-#content h2 {
+.content h2 {
 	font-size: 12pt;
 	margin: 5px 0;
 	padding-left: 2px;
 }
 
-#content h3 {
+.content h3 {
 	font-size: 10pt;
 	margin: 5px 0;
 	padding-left: 4px;
 }
 
-#content p {
+.content p {
 	padding: 0 5px;
 }
 
-#content ul,
-#content ol {
+.content ul,
+.content ol {
 	margin: 5px 0 5px 25px;
 }
 
-/* EDiT PAGE CSS*/
+/* Edit page CSS */
 
 #editbox {
 	margin-bottom: 20px;
+}
+
+div#editorTools {
+	text-align: center;
+}
+
+#editorTools ul {
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#editorTools ul li {
+	list-style: none outside none;
+	width: auto !important;
+	display: inline;
+	margin-right: 5px;
+}
+
+#editorTools a {
+	font-size: 10pt;
+}
+
+#editorTools img {
+	height: 16px;
+	width: 16px;
+	margin-right: 3px;
 }
