@@ -178,10 +178,16 @@ div#editorTools {
 
 #editorTools a {
 	font-size: 10pt;
+	line-height: 16px;
+}
+
+#editorTools a:hover {
+	text-decoration: none;
 }
 
 #editorTools img {
 	height: 16px;
 	width: 16px;
 	margin-right: 3px;
+	vertical-align: bottom;
 }
