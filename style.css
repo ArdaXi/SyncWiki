@@ -22,6 +22,14 @@ a img {
 	border: 0 none;
 }
 
+p {
+	margin-bottom: 5px;
+}
+
+textarea {
+	width: 100%;
+}
+
 .spacer {
 	width: 600px;
 	margin: auto;
@@ -137,4 +145,10 @@ ul#tabs img {
 #content ul,
 #content ol {
 	margin: 5px 0 5px 25px;
+}
+
+/* EDiT PAGE CSS*/
+
+#editbox {
+	margin-bottom: 20px;
 }

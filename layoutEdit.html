@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Editing: Main Page - SyncWiki</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="spacer">
+			<div class="container">
+				<div id="tabs-container">
+					<div id="title">
+						Editing: Main Page
+					</div>
+					<ul id="tabs">
+						<li class="tab">
+							<a href="layout.html">
+								<img src="img/view.png" alt="View" />
+								Read
+							</a>
+						</li>
+						<li class="tab selected">
+							<a href="layoutEdit.html">
+								<img src="img/edit.png" alt="Edit" />
+								Edit
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="content">
+					<form action="#" method="post">
+						<textarea name="editbox" id="editbox" cols="30" rows="20" tabindex="1">== Welcome to Syncwiki ==
+SyncWiki is a new form of wiki software. It's lightweight, fast, and can be mirrored across several servers without the need for MySQL replication.
+
+* Bullet 1
+* Bullet 2
+* Bullet 3
+
+# Bullet 1
+# Bullet 2
+# Bullet 3
+
+== Header 1 ==
+=== Header 2 ===
+==== Header 3 ====
+Normal
+[[Link]]
+
+=== Testing ===
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu libero quis eros aliquam condimentum. Etiam in turpis vitae neque volutpat eleifend. In ac elit metus. Donec lectus est, mattis at mattis id, dictum ac mi. Aliquam erat volutpat. Donec bibendum auctor lorem, quis bibendum metus dapibus et. Sed congue tempus cursus. Sed id purus at ante dignissim ultricies. Nulla iaculis aliquam venenatis. Nunc sodales ultricies felis at blandit. Nam non purus risus. Aenean nec turpis libero. Aliquam a convallis massa. Sed vulputate orci nec velit fermentum suscipit. Sed lobortis dapibus molestie. Maecenas ligula odio, accumsan vitae scelerisque quis, auctor in turpis. Phasellus tincidunt, velit sit amet hendrerit placerat, leo leo semper ipsum, ut vehicula turpis tortor nec elit. Sed est nunc, ornare eu dignissim vitae, semper eu libero. Duis sit amet ante justo, ut rutrum enim. Cras et nulla eros, vitae adipiscing mauris.
+Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium. Curabitur volutpat dolor ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In varius, dolor et aliquet blandit, massa sem blandit mi, vel cursus sapien neque dignissim augue. Mauris ac dolor a libero ullamcorper porttitor vel id neque. Fusce gravida porttitor tortor, eget hendrerit ante iaculis rutrum. Nullam eu ligula at orci vehicula scelerisque. Nunc tincidunt orci sit amet felis euismod et ultrices diam malesuada. Proin est urna, faucibus vel vulputate sit amet, condimentum et est. Integer commodo massa id metus rhoncus tincidunt. Mauris pulvinar adipiscing sapien eu tristique. Vestibulum dictum gravida augue et iaculis. Donec quis velit vitae ipsum egestas malesuada. Etiam fringilla justo ut felis vestibulum blandit. Etiam aliquam, quam eget semper luctus, dui purus eleifend dui, non elementum velit nisl a dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam consequat velit neque. Duis mollis imperdiet vestibulum. Donec commodo dui aliquet velit pharetra egestas molestie vitae nisi.
+
+== Nested Lists ==
+* Bullet 1
+** Bullet 1a
+** Bullet 1b
+** Bullet 1c
+* Bullet 2
+* Bullet 3</textarea>
+						<br />
+						<label for="reason" style="margin-right: 6px;">Reason:
+						<input name="reason" type="text" maxlength="200" size="55" tabindex="2"/>
+						</label>
+						<input type="submit" title="Save" value="Save" tabindex="3"/>
+						<input type="submit" title="Preview" value="Preview" tabindex="4"/>
+					</form>
+				</div>
+				<div id="footer">
+					Last sync: Mar 3 12:30 GMT<br />
+					&copy; 2010 compwhizii
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
