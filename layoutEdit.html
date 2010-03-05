@@ -3,6 +3,8 @@
 	<head>
 		<title>Editing: Main Page - SyncWiki</title>
 		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/editor.js"></script>
 	</head>
 	<body>
 		<div class="spacer">
@@ -27,6 +29,9 @@
 					</ul>
 				</div>
 				<div class="content" id="editor">
+					<div class="protection protection_img top_bar">
+						This page is currently protected from being editing by non-logged in users.
+					</div>
 					<form action="#" method="post">
 						<textarea name="editbox" id="editbox" cols="30" rows="20" tabindex="1">== Welcome to Syncwiki ==
 SyncWiki is a new form of wiki software. It's lightweight, fast, and can be mirrored across several servers without the need for MySQL replication.
@@ -66,9 +71,21 @@ Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium.
 					<hr />
 					<div id="editorTools">
 						<ul>
-							<li><a href="#"><img src="img/history.png" alt="History" />History</a></li>
-							<li><a href="#"><img src="img/protection.png" alt="Protection" />Protection</a></li>
+							<li><a onclick="" href="#"><img src="img/history.png" alt="History" />History</a></li>
+							<li><a onclick="return showProtection();" href="#"><img src="img/protection.png" alt="Protection" />Protection</a></li>
 						</ul>
+					</div>
+					<div id="protect_options" class="protection" style="display: none;">
+						<h2>Protection Options</h2>
+						<form action="#">
+							<p>Protection level</p>
+							<div id="options">
+								<label for="level"><input type="radio" name="level" value="none" /> None</label>
+								<label for="level"><input type="radio" name="level" value="user" checked="checked" /> Logged in users only</label>
+								<label for="level"><input type="radio" name="level" value="admin" /> Admins only</label>
+							</div>
+							<input type="submit" value="Save" />
+						</form>
 					</div>
 				</div>
 				<div id="footer">

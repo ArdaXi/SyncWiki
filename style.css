@@ -191,3 +191,29 @@ div#editorTools {
 	margin-right: 3px;
 	vertical-align: bottom;
 }
+
+.protection {
+	background-color: #FFE88F;
+	border: 2px solid #EED77E;
+	padding: 5px;
+	margin: 10px 0;
+}
+
+.protection_img {
+	background: url("img/protection.png") no-repeat scroll 5px 4px #FFE88F;
+	padding-left: 26px;
+}
+
+div#options {
+	padding-left: 20px;
+	margin: 10px 0;
+}
+
+#options label {
+	display: block;
+	margin: 3px 0;
+}
+
+.top_bar {
+	margin-top: 0px;
+}
