@@ -36,13 +36,13 @@ hr {
 }
 
 .spacer {
-	width: 600px;
+	width: 700px;
 	margin: auto;
 }
 
 .container {
 	margin: 30px auto 50px;
-	width: 590px;
+	width: 700px;
 }
 
 #tabs-container {
@@ -204,6 +204,13 @@ div#editorTools {
 	padding-left: 26px;
 }
 
+.report {
+	background-color: #ff6464;
+	border: 2px solid #ee4840;
+	padding: 5px;
+	margin: 10px 0;
+}
+
 div#options {
 	padding-left: 20px;
 	margin: 10px 0;
@@ -216,4 +223,65 @@ div#options {
 
 .top_bar {
 	margin-top: 0px;
+}
+
+#afterArea {
+	width: 100%;
+	display: inline-block;
+}
+
+#afterArea div#reason {
+	float: left;
+	width: 80%;
+}
+
+#afterArea div#reason input {
+	width: 88%;
+}
+
+#afterArea div#buttons {
+	float: right;
+	width: 20%;
+}
+
+#afterArea div#buttons input {
+	float: right;
+	margin-left: 5px;
+}
+
+#backFloat {
+	left: -10px;
+	top: -10px;
+	position: relative;
+	font-size: 7pt;
+}
+
+#editList {
+	width: 100%;
+	display: inline-block;
+}
+
+#editList div {
+	height: 20px;
+	width: 100%;
+	display: block;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+#editList div.alt1 {
+	background-color: #e5f2ff;
+}
+
+#editList div.alt2 {
+	background-color: #AECEEF;
+}
+
+.panel p {
+	margin: 0;
+	padding: 0;
+}
+
+.panel h2 {
+	padding: 0;
 }

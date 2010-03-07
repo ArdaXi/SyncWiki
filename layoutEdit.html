@@ -62,30 +62,57 @@ Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium.
 * Bullet 2
 * Bullet 3</textarea>
 						<br />
-						<label for="reason" style="margin-right: 6px;">Reason:
-						<input name="reason" type="text" maxlength="200" size="55" tabindex="2"/>
-						</label>
-						<input type="submit" title="Save" value="Save" tabindex="3"/>
-						<input type="submit" title="Preview" value="Preview" tabindex="4"/>
+						
+						<div id="afterArea">
+							<div id="reason">
+								<label for="reason" style="margin-right: 6px;">Reason:
+								<input name="reason" type="text" maxlength="200" size="55" tabindex="2"/>
+								</label>
+							</div>
+							<div id="buttons">
+								<input type="submit" title="Save" value="Save" tabindex="3"/>
+								<input type="submit" title="Preview" value="Preview" tabindex="4"/>
+							</div>
+						</div>
 					</form>
 					<hr />
 					<div id="editorTools">
 						<ul>
-							<li><a onclick="" href="#"><img src="img/history.png" alt="History" />History</a></li>
-							<li><a onclick="return showProtection();" href="#"><img src="img/protection.png" alt="Protection" />Protection</a></li>
+							<li><a href="layoutHistory.html"><img src="img/history.png" alt="History" />History</a></li>
+							<li><a href="#report"><img src="img/report.png" alt="Report" />Report</a></li>
+							<li><a href="#protect"><img src="img/protection.png" alt="Protection" />Protection</a></li>
+							<li><a href="#"><img src="img/delete.png" alt="Delete" />Delete</a></li>
 						</ul>
 					</div>
-					<div id="protect_options" class="protection" style="display: none;">
-						<h2>Protection Options</h2>
-						<form action="#">
-							<p>Protection level</p>
-							<div id="options">
-								<label for="level"><input type="radio" name="level" value="none" /> None</label>
-								<label for="level"><input type="radio" name="level" value="user" checked="checked" /> Logged in users only</label>
-								<label for="level"><input type="radio" name="level" value="admin" /> Admins only</label>
-							</div>
-							<input type="submit" value="Save" />
-						</form>
+					<div class="panels">
+						<div id="protect" class="protection panel">
+							<h2>Protection Options</h2>
+							<form action="#">
+								<p>Protection level</p>
+								<div id="options">
+									<label for="level"><input type="radio" name="level" value="none" /> None</label>
+									<label for="level"><input type="radio" name="level" value="user" checked="checked" /> Logged in users only</label>
+									<label for="level"><input type="radio" name="level" value="admin" /> Admins only</label>
+								</div>
+								<input type="submit" value="Save" />
+							</form>
+						</div>
+						<div id="report" class="report panel">
+							<h2>Report this page</h2>
+							<p>If you feel that this page is in vilation of the rules, you should report it.</p>
+							<br />
+							<form action="#" id="report_form">
+								<p>I feel that this page is:</p>
+								<div id="options">
+									<label for="reason"><input id="reason_radio" type="radio" name="reason" value="1" /> Spam/Advertising</label>
+									<label for="reason"><input id="reason_radio" type="radio" name="reason" value="2" /> Hateful</label>
+									<label for="reason"><input id="reason_radio" type="radio" name="reason" value="3" /> Vandalism</label>
+									<label for="reason"><input id="reason_radio" type="radio" name="reason" value="9999" /> Other:</label>
+									<input type="text" id="other_box" name="other" size="30" style="margin-left: 15px;" />
+								</div>
+								<input type="submit" value="Report" />
+							</form>
+						</div>
 					</div>
 				</div>
 				<div id="footer">
@@ -94,5 +121,57 @@ Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium.
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$("#editorTools ul").each(function () {
+				var $links = $(this).find('a');
+				
+				for(i=0;i<$links.length;i++) {
+					if($links[i].hash.substr(0,1) != '#' || $links[i].hash.length < 2)
+					{
+						$links.splice(i, 1);
+						i--;
+					}
+				}
+				
+				var panelIds = $links.map(function() { return this.hash; }).get().join(","),
+					$panels = $(panelIds),
+					$panelwrapper = $panels.filter(':first').parent(),
+					delay = 500,
+					heightOffset = 34;
+				
+				$panels.hide();
+				
+				$links.click(function () {
+					var link = this,
+						$link = $(this);
+					
+					if ($link.is('.selected')) {
+						$links.removeClass('selected');
+						if ($.support.opacity) {
+							$panels.stop().animate({opacity: 0}, delay);
+						}
+						$panelwrapper.stop().animate({height: 0}, delay);
+						return;
+					}
+					
+					$links.removeClass('selected');
+					$link.addClass('selected');
+					
+					if ($.support.opacity) {
+						$panels.stop().animate({opacity: 0}, delay);
+					}
+					
+					$panelwrapper.stop().animate({
+						height: 0
+					}, delay, function () {
+						var height = $panels.hide().filter(link.hash).css('opacity', 1).show().height() + heightOffset;
+						
+						$panelwrapper.animate({
+							height: height
+						}, delay);
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
