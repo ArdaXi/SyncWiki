@@ -81,7 +81,7 @@ Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium.
 							<li><a href="layoutHistory.html"><img src="img/history.png" alt="History" />History</a></li>
 							<li><a href="#report"><img src="img/report.png" alt="Report" />Report</a></li>
 							<li><a href="#protect"><img src="img/protection.png" alt="Protection" />Protection</a></li>
-							<li><a href="#"><img src="img/delete.png" alt="Delete" />Delete</a></li>
+							<li><a href="#delete"><img src="img/delete.png" alt="Delete" />Delete</a></li>
 						</ul>
 					</div>
 					<div class="panels">
@@ -111,6 +111,18 @@ Phasellus vitae ultrices est. Maecenas egestas facilisis lacus sit amet pretium.
 									<input type="text" id="other_box" name="other" size="30" style="margin-left: 15px;" />
 								</div>
 								<input type="submit" value="Report" />
+							</form>
+						</div>
+						<div id="delete" class="delete panel">
+							<h2>Delete this page</h2>
+							<p>If this page is breaking rules, remove it!</p>
+							<br />
+							<form action="#" id="delete_form">
+								<div id="options">
+									<label for="delete_reason"><strong>Reason:</strong> <br />
+										<input type="text" name="reason" id="delete_reason" size="30" /></label>
+								</div><br /><br />
+								<input type="submit" value="Delete" />
 							</form>
 						</div>
 					</div>

@@ -211,6 +211,18 @@ div#editorTools {
 	margin: 10px 0;
 }
 
+.delete {
+	background-color: #ff4f49;
+	border: 2px solid #ee3628;
+	padding: 5px;
+	margin: 10px 0;
+}
+
+.delete_img {
+	background: url("img/delete.png") no-repeat scroll 5px 4px #FF4F49;
+	padding-left: 26px;
+}
+
 div#options {
 	padding-left: 20px;
 	margin: 10px 0;
