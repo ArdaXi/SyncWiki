@@ -40,9 +40,16 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "page";
 $route['scaffolding_trigger'] = "";
 
+/**************************
+** SyncWiki Routes Ahoy! **
+**************************/
+
+$route['([^/]*?)'] = 'page/view/$1';
+$route['([^/]*?)/edit'] = 'page/edit/$1';
+$route['([^/]*?)/edit-([0-9a-zA-Z]*?)'] = 'page/edit/$1/$2';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
