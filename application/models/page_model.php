@@ -26,7 +26,7 @@ class Page_model extends SW_Model {
 		$this->db->where('page_title', $page_title);
 		$this->db->limit(1);
 		$query = $this->db->get();
-		$this->load($query);
+		$this->load($query, $page_title);
 	}
 	
 	function load_id($page_id)
@@ -39,11 +39,13 @@ class Page_model extends SW_Model {
 		$this->load($query);
 	}
 	
-	function load(&$query)
+	function load(&$query, $title = '')
 	{
 		if( $query->num_rows() == 0 )
 		{
-			die('No rows :( ');
+			$this->title 	= str_replace("_", " ", $title);
+			$this->text		= "This page is still empty.";
+			return $query;
 		}
 		
 		$row = $query->row();
@@ -87,6 +89,10 @@ class Page_model extends SW_Model {
 		if($this->id == 0)
 		{
 			// This is a new page
+			if(count($p_data) > 0)
+				$this->db->insert('page', $p_data);
+			if(count($pt_data) > 0)
+				$this->db->insert('page_text', $pt_data);
 		}
 		else
 		{
