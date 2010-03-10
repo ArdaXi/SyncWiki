@@ -223,12 +223,12 @@ div#editorTools {
 	padding-left: 26px;
 }
 
-div#options {
+div.options {
 	padding-left: 20px;
 	margin: 10px 0;
 }
 
-#options label {
+.options label {
 	display: block;
 	margin: 3px 0;
 }

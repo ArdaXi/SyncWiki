@@ -53,11 +53,38 @@ function deleteSubmit()
 	return false;
 }
 
+function lockSubmit()
+{
+	$levels = $("#protect_options input");
+	
+	var newlevel = 0;
+	for(i=0;i<$levels.length;i++)
+	{
+		if($levels[i].checked)
+		{
+			newlevel = $levels[i].value;
+		}
+	}
+	
+	$.post(lock_link, {pageid: pageid, newlevel: newlevel}, function(data) {
+		$('#protect').html('<p>Protection level updated.</p>');
+		var height = $('#protect').height() + 34;
+		$('.panels').animate({
+			height: height
+		}, 500);
+	});
+	
+	return false;
+}
+
 $(document).ready(function (){
 	$("#report_form").submit(function() {
 		return reportSubmit();
 	});
 	$("#delete_form").submit(function() {
 		return deleteSubmit();
+	});
+	$("#protect_form").submit(function() {
+		return lockSubmit();
 	});
 });

@@ -1,30 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/*******
-
-				<div id="tabs-container">
-					<div id="title">
-						Main Page
-					</div>
-					<ul id="tabs">
-						<li class="tab selected">
-							<a href="layout.html">
-								<img src="img/view.png" alt="View" />
-								Read
-							</a>
-						</li>
-						<li class="tab">
-							<a href="layoutEdit.html">
-								<img src="img/edit.png" alt="Edit" />
-								Edit
-							</a>
-						</li>
-					</ul>
-				</div>
-
-******/
-
-
 if( ! function_exists('buid_tabs') )
 {
 	/**
